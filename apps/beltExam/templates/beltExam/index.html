@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        {% load staticfiles %}
+        <link rel="stylesheet" href="{% static 'beltExam/index.css'%}" type="text/css">
+
+        <meta charset="utf-8">
+        <title>Wish List</title>
+    </head>
+    <body>
+        <div class="wrapper">
+            <h1 >Welcome To The Wish Tree</h1>
+            <h2>Want to make a wish?</h2>
+            <h2>want to see what wish other people have?</h2>
+
+                <div class="main">
+                    <div class="row">
+                        <div class="col-sm-6">
+                          <h2>Log In</h2>
+                          <form action="/login" method="post">
+                              {% csrf_token %}
+                              <p>Email: <input type="text" name="email"></p>
+                              <p>Password: <input type="password" name="password"></p>
+                              <input style="font-size: 20px;" type="submit" name="submit" value="Login">
+                          </form>
+                        </div>
+
+                        <div class="col-sm-6">
+                          <h2>Register</h2>
+                          <form action="/register" method="post">
+                              {% csrf_token %}
+                              <p>First Name: <input type="text" name="first_name"></p>
+                              <p>Last Name: <input type="text" name="last_name"></p>
+                              <p>Email: <input type="text" name="email"></p>
+                              <p>Password: <input type="password" name="password"></p>
+                              <p>Confirm: <input type="password" name="confirm"></p>
+                              <p>Date Birth: <input type="date" name="date"></p>
+                              <input style="font-size: 20px" type="submit" name="submit" value="Register">
+                          </form>
+                        </div>
+
+
+                    </div>
+
+
+                    {% if messages %}
+                        {% for message in messages %}
+                            <ul>
+                                <li style="font-size: 20px;text-shadow: 2px 2px 3px black; color:red;">{{message}}</li>
+                            </ul>
+                        {% endfor %}
+                    {% endif %}
+                    <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
+                </div>
+
+        </div>
+    </body>
+</html>

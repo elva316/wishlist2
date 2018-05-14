@@ -1,0 +1,54 @@
+body{
+    margin: 0px;
+    background: url("/static/img/gg.png")  ;
+    background-size: cover;
+    background-color: #e8eae9;
+    width: 100%;
+    height: 100%;
+}
+
+.wrapper{
+    padding-top: 30px;
+    padding-bottom: 30px;
+    position: relative;
+    background: rgba(238,240,239,0.3);
+}
+.main{
+    width: 550px;
+    position: relative;
+    /* height: 120%; */
+    margin-left: 20%;
+    margin-top: 20px;
+}
+.corner{
+    position: fixed;
+    top:0;
+    right:0;
+    width: 300px;
+    height: 300px;
+    background: url("/static/img/g.png")  ;
+    /* float: right; */
+
+}
+.sameline{
+    margin-right: 120px;
+}
+.logout{
+    margin-left: 300px;
+    display: inline;
+}
+h1{
+    font-size: 60px;
+}
+
+table{
+    border-spacing:15px;
+}
+
+.left{
+    display: inline;
+    margin-bottom: 30px;
+}
+hr{
+    border-top: 1px solid black;
+}

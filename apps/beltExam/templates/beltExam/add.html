@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {% load staticfiles %}
+        <link rel="stylesheet" href="{% static 'beltExam/add.css'%}" type="text/css">
+
+        <meta charset="utf-8">
+        <title>Create Item</title>
+    </head>
+    <body>
+        <div class="wrapper">
+            <div class="main">
+                <h1>Creating a New Wish</h1>
+                <form action="/update" method="post">
+                    {% csrf_token %}
+                    <p>Make a wish: <input type="text" name="product"></p>
+                    <br>
+                    <input type="submit" name="submit">
+                </form>
+                <br><br><br><br><br><br><br><br>
+                <hr>
+                <a href="/dashboard">Home</a>
+                <a class="right" href="/logout">Logout</a>
+                {% if messages %}
+                    {% for message in messages %}
+                        {{ message }}
+                    {% endfor %}
+                {% endif %}
+            </div>
+            <div class="corner">
+
+            </div>
+        </div>
+    </body>
+</html>
