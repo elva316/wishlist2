@@ -5,6 +5,7 @@ body{
     background-repeat: no-repeat;
     background-size: cover;
     text-align: center;
+
 }
 *{
     font-weight: bold;
@@ -24,15 +25,26 @@ h1{
     margin: 0;
     height: 100vh;
 }
-.row{
+.row2{
     /* border: 1px solid black; */
     width: 900px;
     padding: 20px;
     text-align: justify;
     font-weight: bold;
     font-size:  20px;
-    position: absolute;
-    top: 55%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    margin: auto;
+}
+.row li{
+    list-style: none;
+}
+
+
+
+@media screen and (max-width: 1049px)
+{
+        @media screen and (max-height: 814px){
+            .err li{
+                line-height: .8;
+            }
+        }
 }

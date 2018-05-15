@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-    <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
         {% load staticfiles %}
         <link rel="stylesheet" href="{% static 'beltExam/index.css'%}" type="text/css">
@@ -10,12 +10,24 @@
     </head>
     <body>
         <div class="wrapper">
-            <h1 >Welcome To The Wish Tree</h1>
-            <h2>Want to make a wish?</h2>
-            <h2>want to see what wish other people have?</h2>
+                <div class="row">
+                    <h1 >Welcome To The Wish Tree</h1>
+                    <h2>Want to make a wish?</h2>
+                    <h2>want to see what wish other people have?</h2>
+                </div>
+                <div class="row err" >
+                    {% if messages %}
+                    {% for message in messages %}
+                    <ul>
+                        <li style="font-size: 18px;text-shadow: 1px 1px 2px black; color:red;">{{message}}</li>
+                    </ul>
+                    {% endfor %}
+                    {% endif %}
 
-                <div class="main">
-                    <div class="row">
+                </div>
+
+                <!-- <div class="box2"> -->
+                    <div class="row row2 row-centerd">
                         <div class="col-sm-6">
                           <h2>Log In</h2>
                           <form action="/login" method="post">
@@ -39,21 +51,11 @@
                               <input style="font-size: 20px" type="submit" name="submit" value="Register">
                           </form>
                         </div>
-
-
                     </div>
+                <!-- </div> -->
 
 
-                    {% if messages %}
-                        {% for message in messages %}
-                            <ul>
-                                <li style="font-size: 20px;text-shadow: 2px 2px 3px black; color:red;">{{message}}</li>
-                            </ul>
-                        {% endfor %}
-                    {% endif %}
-                    <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
-                </div>
-
+            </div>
         </div>
     </body>
 </html>
